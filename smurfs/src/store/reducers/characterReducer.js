@@ -2,7 +2,7 @@ const initialState = {
   data: [],
   isFetching: false,
   error: "",
-  characters: [],
+  // characters: [],
 };
 
 export const characterReducer = (state = initialState, action) => {
@@ -28,12 +28,10 @@ export const characterReducer = (state = initialState, action) => {
         isFetching: false,
       };
     case "POST_CHARACTER_SUCCESS":
-      // console.log(
-      // "POST_CHARACTER_SUCESS action payload",
-      // action.payload
-      // state.characters
-      // );
-      return { ...state, characters: action.payload };
+      return {
+        ...state,
+        data: action.payload,
+      };
     case "POST_CHARACTER_FAIL":
       return {
         ...state,

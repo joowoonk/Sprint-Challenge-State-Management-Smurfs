@@ -13,9 +13,9 @@ import {
 const CharacterForm = (props) => {
   const [formState, setFormState] = useState([
     {
-      name: "Kang",
-      age: 22,
-      height: 122,
+      name: "",
+      age: "",
+      height: "",
       // id: ""
     },
   ]);
@@ -43,7 +43,7 @@ const CharacterForm = (props) => {
       height: "",
     });
   };
-  console.log("props.characters", props.characters);
+  console.log("props.characters", props.data);
   return (
     <div>
       <form>
@@ -88,7 +88,7 @@ const CharacterForm = (props) => {
           );
         })}
         {/* {console.log("props.characters", props.characters)} */}
-        {props.characters.map((newCharacter) => {
+        {/* {props.data.map((newCharacter) => {
           return (
             <div key={newCharacter.id}>
               <h2>Name:{newCharacter.name}</h2>
@@ -97,7 +97,7 @@ const CharacterForm = (props) => {
               <p>Id:{newCharacter.id}</p>
             </div>
           );
-        })}
+        })} */}
       </section>
     </div>
   );
@@ -108,7 +108,7 @@ const mapStateToProps = (state) => {
   return {
     data: state.character.data,
     isFetching: state.character.isFetching,
-    characters: state.character.characters,
+    // characters: state.character.characters,
   };
 };
 
